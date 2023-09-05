@@ -1,6 +1,6 @@
 # cv-toolkit-tf
 
-This repository serves as a standard development toolkit (SDK) for the development of basic DNN models for computer vision tasks. The SDK implements `tensorflow and `keras` frameworksin `python`.
+This repository serves as a standard development toolkit (SDK) for the development of basic DNN models for computer vision tasks. The SDK implements `tensorflow` and `keras` frameworksin `python`.
 
 
 The tasks covered currently are:
@@ -9,7 +9,7 @@ The tasks covered currently are:
 2. Multi-class classficiation
 3. Multi-label classification
 
-### Set up
+## Set up
 
 The coding environment used in the development of the SDK is set up using `conda` as such, it is expected that conda and dependencies are installed prior to using the toolkit.
 
@@ -18,7 +18,7 @@ To install the necessary libraries, run the following in the terminal:
 conda env create -f environment.yml
 ```
 
-### Data
+## Data
 
 Sample datasets are stored in the `datasets` directory. It is expected that datasets are structured following the sample tree below:
 
@@ -35,7 +35,7 @@ Sample datasets are stored in the `datasets` directory. It is expected that data
 
 Additional metadata are in the `metadata` directory which contains dataframes (.csvs) of accompanying metadata index by image IDs (e.g., patientid_frameid). The filenames map to the same directory name in the `datasets` diretory.
 
-### Utilities
+## Utilities
 
 The scripts are contained in `utils` and are described as follows.
 
