@@ -1,6 +1,6 @@
 # cv-toolkit-tf
 
-This repository serves as a standard development toolkit (SDK) for the development of basic DNN models for computer vision tasks. The SDK implements `tensorflow` and `keras` frameworksin `python`.
+This repository serves as a standard development toolkit (SDK) for the development of basic DNN models for computer vision tasks. The SDK implements `tensorflow`,`keras`, and `pytorch` frameworks in `python`.
 
 
 The tasks covered currently are:
@@ -17,6 +17,17 @@ To install the necessary libraries, run the following in the terminal:
 ```
 conda env create -f environment.yml
 ```
+As the SDK is currently underdevelopment, you may install the `cvtoolkit` *version 0.1* package after cloning by running below script within the top-level dir of `cv-toolkit` repo.
+
+```
+pip install -e .
+```
+
+This should allow imports within the environment. For example:
+```
+from cvtoolkit import explore
+from cvtoolkit.tensorflow import train
+```
 
 ## Data
 
@@ -30,25 +41,26 @@ Sample datasets are stored in the `datasets` directory. It is expected that data
 			- <image_id2>
 		- <name-of-class2>
 		- <name-of-class3>
-	- <name of dataset2>
+	- <name-of-dataset2>
+    - <name-of-dataset3>
 ```
 
-Additional metadata are in the `metadata` directory which contains dataframes (.csvs) of accompanying metadata index by image IDs (e.g., patientid_frameid). The filenames map to the same directory name in the `datasets` diretory.
+Additional metadata are in the `metadata` directory which contain dataframes (.csvs) of accompanying metadata indexed by image IDs (e.g., patientID_frameID). The filenames map to the files in the `datasets` diretory.
 
 ## Utilities
 
 The scripts are contained in `utils` and are described as follows.
 
-1. `utils/binary.py` contains code for training binary classifiers
-2. `utils/multiclass.py` contains code for training multiclass classfiers.
-3. `utils/multilabel.py` contains code for training multilabellers
-4. `utils/inference.py` accepts a path to a saved model and an a dataset for inference and returns a `csv` that maps an image id to prediction probabilty.
-5. `utils/evaluate.py` accepts a path to a saved model and a validation or test dataset and outputs the following:
+1. `src/*/binary.py` contains code for training binary classifiers
+2. `src/*/multiclass.py` contains code for training multiclass classfiers.
+3. `src/*/multilabel.py` contains code for training multilabellers
+4. `src/*/inference.py` accepts a path to a saved model and an a dataset for inference and returns a `csv` that maps an image id to prediction probabilty.
+5. `src/*/evaluate.py` accepts a path to a saved model and a validation or test dataset and outputs the following:
 	- `figures/loss-curves.png`
 	- `figures/confusion-matrix.png` (based on top-1 softmax for multiclass)
 	- `figures/roc-pr-curves.png` (for binary classification)
-6. `utils/explore.py` generates an initial exploration of the dataset at:
+6. `src/explore.py` generates an initial exploration of the dataset at:
 	- `figures/samples.py` a labelled grid of randomly sampled images per class or class combination (i.e., in multilabel scenario).
-7. `utils/config` is a high level directory of configuration files needed to support the explore, train, inference, and evaluate scripts.
+7. `src/config` is a high level directory of configuration files needed to support the explore, train, inference, and evaluate scripts.
 
 
