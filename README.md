@@ -1,4 +1,4 @@
-# cv-toolkit-tf
+# cv-toolkit
 
 This repository serves as a standard development toolkit (SDK) for the development of basic DNN models for computer vision tasks. The SDK implements `tensorflow` and `keras` frameworksin `python`.
 
