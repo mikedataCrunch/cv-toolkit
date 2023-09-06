@@ -1,1 +1,4 @@
 datasets/*
+.ipynb_checkpoints
+metadata/*
+__pycache__
