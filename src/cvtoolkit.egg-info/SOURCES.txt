@@ -1,6 +1,0 @@
-README.md
-setup.py
-src/cvtoolkit.egg-info/PKG-INFO
-src/cvtoolkit.egg-info/SOURCES.txt
-src/cvtoolkit.egg-info/dependency_links.txt
-src/cvtoolkit.egg-info/top_level.txt
